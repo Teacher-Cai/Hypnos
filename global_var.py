@@ -11,5 +11,5 @@ check_surroundings_db_second = 5
 
 
 class HearFrequency:
-    lowFre = 5
+    lowFre = 20
     highFre = 2000
