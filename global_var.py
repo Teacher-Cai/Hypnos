@@ -1,7 +1,7 @@
 class Flags:
     noiseFlag = False
     runningFlag = False
-    dbThres = 5
+    dbThres = 10
 
 
 # constant
