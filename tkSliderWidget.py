@@ -39,7 +39,7 @@ class Slider(Frame):
             self.slider_y = self.canv_H / 2  # y pos of the slider
         else:
             self.slider_y = self.canv_H * 2 / 5
-        self.slider_x = Slider.BAR_RADIUS  # x pos of the slider (left side)
+        self.slider_x = Slider.BAR_RADIUS + 10  # x pos of the slider (left side)
 
         self.bars = []
         self.selected_idx = None  # current selection bar index
@@ -49,7 +49,7 @@ class Slider(Frame):
             bar = {"Pos": pos, "Ids": ids, "Value": value}
             self.bars.append(bar)
 
-        self.canv = Canvas(self, height=self.canv_H, width=self.canv_W)
+        self.canv = Canvas(self, height=self.canv_H, width=self.canv_W + 15)
         self.canv.pack()
         self.canv.bind("<Motion>", self._mouseMotion)
         self.canv.bind("<B1-Motion>", self._moveBar)

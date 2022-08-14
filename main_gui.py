@@ -24,7 +24,7 @@ init_config()
 
 root = tk.Tk()
 root.title('修普诺斯守护神')
-root.geometry("500x300+550+150")
+root.geometry("520x321+550+150")
 # 创建按钮，并且将按钮放到窗口里面
 btn1 = tk.Button(root)
 btn1["text"] = "开始守护"  # 给按钮一个名称
@@ -77,7 +77,7 @@ slider = Slider(
     root,
     width=300,
     height=60,
-    min_val=5,
+    min_val=20,
     max_val=20000,
     init_lis=[global_var.HearFrequency.lowFre, global_var.HearFrequency.highFre],
     show_value=True,
