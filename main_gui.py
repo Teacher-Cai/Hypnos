@@ -23,7 +23,7 @@ def set_db_threshold(e):
 init_config()
 
 root = tk.Tk()
-root.title('修普诺斯守护神')
+root.title('修普诺斯的守护')
 root.geometry("520x321+550+150")
 # 创建按钮，并且将按钮放到窗口里面
 btn1 = tk.Button(root)
