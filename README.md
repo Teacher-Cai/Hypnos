@@ -1,4 +1,4 @@
 # Hypnos
 Hypnos for nap
 
-![image](./hypnos.ico)
+![image](image/hypnos.png)
