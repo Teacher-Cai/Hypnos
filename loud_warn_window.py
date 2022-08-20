@@ -12,7 +12,10 @@ def show_warming(tim):
         # set your favourite rgb color
         root1.configure(bg=mycolor)
         time_lable.place(relx=random.uniform(0, 0.5), rely=random.uniform(0, 0.9))
-        time_lable.after(1000, foo)
+        if tim > 0:
+            time_lable.after(1000, foo)
+        else:
+            root1.destroy()
 
     root1 = tk.Tk()
     root1.attributes('-fullscreen', True)
@@ -22,5 +25,4 @@ def show_warming(tim):
     time_lable.place(relx=0.01, rely=0.2)
     time_lable.after(1000, foo)  # 每1000毫秒调用一次foo
 
-    root1.after(tim * 1000, root1.destroy)
     root1.mainloop()

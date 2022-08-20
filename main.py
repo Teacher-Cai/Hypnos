@@ -4,15 +4,11 @@ import json
 import logging
 import os
 import threading
-import time
-
-import keyboard
 
 import global_var
-from global_var import Flags
-from loud_warn_window import show_warming
 from voiceDetect import voice_detect_func
 
+logging.basicConfig(format='【%(asctime)s】 【%(levelname)s】 >>>  %(message)s', datefmt='%Y-%m-%d %H:%M')
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
@@ -40,33 +36,7 @@ def print_hi():
     t = threading.Thread(target=voice_detect_func, args=())
     t.setDaemon(True)
     t.start()
-    t1 = threading.Thread(target=too_loud_window, args=())
-    t1.setDaemon(True)
-    t1.start()
-    t2 = threading.Thread(target=close_program, args=([t, t1],))
-    t2.setDaemon(True)
-    t2.start()
-
-
-def too_loud_window():
-    while True:
-        if Flags.noiseFlag:
-            t11 = threading.Thread(target=show_warming, args=(5,))
-            t11.setDaemon(True)
-            t11.start()
-            t11.join()
-        else:
-            time.sleep(0.05)
-
-
-def close_program(threading_list=None):
-    if threading_list is None:
-        threading_list = []
-    keyboard.wait('space')
-    for i in threading_list:
-        stop_thread(i)
-    Flags.runningFlag = False
-    logging.info("exit " * 5)
+    return t
 
 
 def init_config():
