@@ -29,6 +29,7 @@ init_config()
 root = tk.Tk()
 root.title('修普诺斯的守护')
 root.geometry("520x321+550+150")
+root.iconbitmap("image/hypnos.ico")
 # 创建按钮，并且将按钮放到窗口里面
 btn1 = tk.Button(root)
 btn1["text"] = "开始守护"  # 给按钮一个名称
